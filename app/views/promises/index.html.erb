@@ -1,0 +1,16 @@
+<h1>Promises</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Promiser</th>
+    <th>Status</th>
+  </tr>
+  <% @promises.each do |promise| %>
+    <tr>
+      <td><%= link_to promise.title, "/promises/#{promise.id}" %></td>
+      <td><%= promise.promiser %></td>
+      <td><%= promise.status %></td>
+    </tr>
+  <% end %>
+</table>
