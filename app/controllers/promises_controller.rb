@@ -24,9 +24,18 @@ class PromisesController < ApplicationController
     @promise = Promise.find(params["id"])
   end
 
+  def update
+    @promise = Promise.update(params["id"],promise_params)
+    if @promise.save
+      redirect_to '/'
+    else
+      render edit
+    end
+  end
+
   private
 
   def promise_params
-    params.require(:promise).permit(:title, :promiser)
+    params.require(:promise).permit(:title, :promiser, :status)
   end
 end

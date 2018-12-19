@@ -11,11 +11,13 @@ feature "When a user visits a promise show page" do
 
       click_on("Edit/Update Promise")
 
-      select("done", from: :status )
+      select("done", from: :promise_status )
       click_on("Update Promise")
 
-      expect(current_path).to eq(promise_path(promise))
-      expect(page).to have_content("Status:\ndone")
+      expect(current_path).to eq('/')
+      within("#promise-#{promise.id}") do
+        expect(page).to have_content("Status: done")
+      end
     end
   end
 end
