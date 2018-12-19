@@ -17,7 +17,11 @@ class PromisesController < ApplicationController
       redirect_to '/'
     else
       render new
-    end 
+    end
+  end
+
+  def edit
+    @promise = Promise.find(params["id"])
   end
 
   private

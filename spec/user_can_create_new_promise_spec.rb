@@ -21,7 +21,7 @@ feature "As a user" do
       fill_in :promise_title, with: new_promise[:title]
       fill_in :promise_promiser, with: new_promise[:promiser]
 
-      click_on("Save Promise")
+      click_on("Create Promise")
 
       expect(current_path).to eq('/')
       expect(page).to have_content(new_promise[:title])

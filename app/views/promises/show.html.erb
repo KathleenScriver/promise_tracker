@@ -5,3 +5,5 @@ Promise: <p> <%= @promise.title %></p>
 Promised By: <p> <%= @promise.promiser %></p>
 
 Status: <p> <%= @promise.status %></p>
+
+<%= link_to "Edit/Update Promise", edit_promise_path(@promise) %>
