@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :promise do
-    title { Faker::Friends.quote }
+    sequence(:title){|n| "Promise ##{n}" }
     promiser { Faker::SiliconValley.character }
   end
 end

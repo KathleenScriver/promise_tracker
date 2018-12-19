@@ -1,0 +1,12 @@
+<h1>Add a New Promise</h1>
+
+<%= form_for :promise, url: {action: 'create'} do |f|  %>
+
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+
+  <%= f.label "Promiser" %>
+  <%= f.text_field :promiser %>
+
+  <%= f.submit %>
+<% end %>
